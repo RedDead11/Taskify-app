@@ -3,7 +3,6 @@ import React, {
   useContext,
   useState,
   useEffect,
-  Children,
 } from "react";
 
 type ThemeContextType = {
