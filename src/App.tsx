@@ -7,13 +7,16 @@ import Signup from "./hooks/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import InputField from "./components/InputField";
 import TodoList from "./components/TodoList";
+import SearchBar from "./components/SearchBar";
 import { Todo } from "./model";
 import "./App.css";
+import ThemeToggle from "./components/ThemeToggle";
 
 const TodoApp: React.FC = () => {
   const { user, signOut } = useAuth();
   const [todo, setTodo] = useState<string>("");
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [loading, setLoading] = useState(true);
 
   // Load todos from Supabase when user logs in
@@ -90,6 +93,11 @@ const TodoApp: React.FC = () => {
     setTodos([]);
   };
 
+  // Filter todos based on search query
+  const filteredTodos = todos.filter((todo) =>
+    todo.todo.toLowerCase().includes(searchQuery.toLowerCase()),
+  );
+
   if (loading) {
     return (
       <div className="loading-container">
@@ -100,6 +108,7 @@ const TodoApp: React.FC = () => {
 
   return (
     <div className="App">
+      <ThemeToggle />
       <div className="app-header">
         <span className="heading">
           {"TASKIFY".split("").map((char, index) => (
@@ -116,8 +125,9 @@ const TodoApp: React.FC = () => {
         </div>
       </div>
 
+      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <TodoList todos={todos} setTodos={setTodos} />
+      <TodoList todos={filteredTodos} setTodos={setTodos} />
     </div>
   );
 };

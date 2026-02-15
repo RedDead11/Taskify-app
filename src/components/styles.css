@@ -159,6 +159,7 @@ body {
   margin-bottom: 20px;
   word-break: break-word;
   flex-grow: 1;
+  color: #000000 !important;
 }
 
 .todo-icons-holder {
