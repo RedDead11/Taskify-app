@@ -19,6 +19,8 @@ A full-stack todo application built with React, TypeScript, and Supabase. Featur
 - 🔒 **Private Todos** - Each user sees only their own tasks
 - ⚡ **Real-time Updates** - Changes sync instantly with the database
 - 📱 **Responsive Design** - Works on desktop and mobile
+- 🌙 **Dark Mode** - Toggle between light and dark themes
+- 🔍 **Search Functionality** - Instantly filter todos by text
 
 ## 🚀 Tech Stack
 
@@ -112,8 +114,12 @@ src/
 │   ├── InputField.tsx         # Todo input component
 │   ├── TodoList.tsx           # Todo list container
 │   ├── SingleTodo.tsx         # Individual todo card
+│   ├── SearchBar.tsx          # Search functionality
+│   ├── ThemeToggle.tsx        # Dark mode toggle
 │   ├── ProtectedRoute.tsx     # Route guard
 │   └── styles.css             # Component styles
+├── context/
+│   └── ThemeContext.tsx       # Theme state management
 ├── hooks/
 │   └── useAuth.ts             # Authentication hook
 ├── lib/
