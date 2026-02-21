@@ -6,7 +6,7 @@
   </a>
 </p>
 
-A full-stack todo application built with React, TypeScript, and Supabase. Features user authentication, real-time data persistence and a clean, animated UI.
+A full-stack todo application built with React, TypeScript and Supabase. Features user authentication, real-time data persistence and a clean, animated UI.
 
  ![Taskify Demo](./src/Images/screenshot.png)
 
