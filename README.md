@@ -33,7 +33,7 @@ A full-stack todo application built with React, TypeScript, and Supabase. Featur
 ## 📋 Prerequisites
 
 - Node.js (v14 or higher)
-- npm or yarn
+- npm
 - Supabase account ([supabase.com](https://supabase.com))
 
 ## 🛠️ Installation
